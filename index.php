@@ -4,9 +4,9 @@
 $image_path = "predict.jpg";
 
 //プロジェクトID
-$projectID = "automl-vision-221408";
+$projectID = "automl-vision";
 //データセットID
-$datasetID = "ICN2096270953301933140";
+$datasetID = "ICN";
 
 // 認証用トークン
 $token = "";
@@ -52,15 +52,10 @@ $json_res = substr($res1, $res2["header_size"]);
 $json_res = mb_convert_encoding($json_res, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 $arr = json_decode($json_res, true);
 
-// 配列の数
-var_export($arr);
 
 $displayName = $arr['payload'][0]['displayName'];
 $score = round($arr['payload'][0]['classification']['score'] * 100);
-$comment = "";
-if ($displayName != 'Kaiji') {
-    $score = 100 - $score;
-    $comment = "あなたはカイジではありません。";
-}
-print "$displayName $comment";
-print $score;
+
+print "displayName : $displayName<br>";
+print "score : $score";
+
