@@ -1,2 +1,4 @@
 # AutoML_PHP_sample
-Googleの機械学習API・Google AutoML Vision をPHPで使うときのサンプルコードです。
+Googleが提供する機械学習モデルのカスタムトレーニングサービス・[Google AutoML Vision](https://cloud.google.com/automl/) をPHPで使うときのサンプルコードです。
+
+トークンの取得が必須。APIキーではありません。
